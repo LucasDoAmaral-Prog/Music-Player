@@ -52,12 +52,11 @@ Um **Music Player** desenvolvido com **HTML, CSS e JavaScript puro**, totalmente
 - JavaScript (Vanilla JS) → Funcionalidades principais
 
 ## 📸 Preview
-Adicione uma imagem ou GIF mostrando o player em funcionamento.
-
+[www.music-player.com](https://lucasdoamaral-prog.github.io/Music-Player/)
 ## 📌 Como Usar
 1. Clone o repositório:
 ```bash
-git clone https://github.com/seu-usuario/music-player.git
+git clone https://github.com/LucasDoAmaral-Prog/music-player.git
 ```
 2. Abra o arquivo index.html no navegador
 3. Adicione suas músicas na pasta de áudio e edite a playlist
