@@ -1,0 +1,732 @@
+*{
+
+    padding: 0; margin: 0;
+    box-sizing: border-box;
+    font-family: "Inter";   
+
+}
+
+
+@keyframes musicAnimation{
+
+    to{transform: rotate(360deg);}
+
+}
+
+main{
+
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+
+}
+
+main .image-body{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    filter: brightness(0.3) saturate(1.5);;
+    background: linear-gradient(
+        to bottom,
+        rgb(0, 0, 0), 
+        rgba(0, 0, 0, 0) 60%, 
+        rgba(0, 0, 0, 0.9) 
+    );
+
+    box-shadow: 0px 0px 1000px rgba(0, 0, 0, 0.8); /* Alterando o blur e spread */
+
+
+}
+
+
+.background-Music{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    min-height: 100vh;
+
+}
+
+.design-Music{
+
+    border-radius: 15px;
+    width: 500px;
+    padding: 30px;
+}
+
+.center-Image {
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.image-Music {
+    display: flex;
+    justify-content: center;
+    width: 300px; 
+    height: 300px; 
+    border-radius: 50%; 
+    border: 10px solid black; 
+    background: radial-gradient(circle, #000 70%, #333 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, 0.5); 
+    overflow: hidden; 
+    position: relative;
+
+}
+
+.image-Music img {
+    width: 80%; 
+    height: 80%;
+    border-radius: 50%;
+    object-fit: cover; 
+    position: absolute;
+    z-index: 2; 
+}
+
+.image-Music::after {
+    content: "";
+    width: 20px; 
+    height: 20px;
+    background-color: #000; 
+    border: 2px solid #666;
+    border-radius: 50%; 
+    position: absolute;
+    z-index: 3; 
+}
+
+.options{
+
+    position: absolute;
+    
+}
+
+#options{
+
+    filter: invert(100%);
+    transition: all .3s ease-in-out;
+}
+
+#options:hover{
+
+    cursor: pointer;
+    filter: invert(55%);
+    transform: scale(1.1);
+
+}
+
+.paragraph-options{
+
+    margin-bottom: 10px;
+
+}
+
+#order{
+
+    display: none;
+    border: none;
+    box-shadow: 10px 10px 15px rgb(10, 10, 10);
+
+}
+
+.order-list{
+
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    list-style: none;
+    padding: 50px; 
+    color: white;
+    border-radius: 10px;
+    z-index: 100;
+    width: 300px;
+
+}
+
+.order-Control{
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    padding: 20px; 
+    color: rgb(255, 250, 250);
+    border-radius: 10px;
+    z-index: 100;
+    width: 100%;
+
+}
+
+.velocity{
+
+    margin-bottom: 30px;
+
+}
+
+.velocity, .playlist{
+    
+    font-size: calc(100% + 0.2vmin);
+    text-align: center;
+    transition: all .6s ease-in-out;
+}   
+
+.velocity:hover, .playlist:hover{
+
+    color:rgb(180, 180, 180);
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+
+}
+
+.close-Div{
+
+    position: absolute;
+    right: 0; top: 0;
+    height: 24px;
+    margin-top: 13px;
+    margin-right: 22px;
+
+}
+
+.close-Div:hover{
+
+    cursor: pointer;
+    filter: invert(65%);
+    transition: all .4s ease-in-out;
+
+}
+
+.choose-Speed{
+
+    display: none;
+
+}
+
+.order-Velocity, .playlist-Order{
+
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -80%);
+    list-style: none;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 15px;
+    z-index: 100;
+    width: 425px;
+    padding: 20px;
+
+}
+
+#playlist{
+
+    display: none;
+
+}
+
+.arrow-back, .back-Playlist{
+
+    filter: invert(100%);
+    display: block;
+    margin-left: auto; margin-right: auto;
+
+}
+
+.arrow-back:hover, .back-Playlist:hover{
+
+    cursor: pointer;
+    filter: invert(65%);
+    transition: all .4s ease-in-out;
+
+}
+
+.playlist-Order li:hover{
+
+    transition: all .4s ease-in-out;
+    color: black;
+    cursor: pointer;
+
+}
+
+
+
+.velocityChoose{
+
+    margin-top: 20px;
+    text-align: center;
+    font-size: 1.1em;
+
+}
+
+.velocityChoose li{
+
+    margin-top: 10px;;
+
+}
+
+
+.velocityChoose li:hover{
+
+    color: black;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+}
+
+.paragraph-velocity{
+
+    font-size: 1.3em;
+    font-weight: bold;
+    text-align: center;
+
+}
+
+
+.Playlist-Show{
+
+    position: relative;
+    font-size: 1em;
+
+}
+
+.Playlist-Show li{
+
+    margin-top: 20px;
+
+}
+
+#choosePlaylist li:hover{
+
+    cursor: pointer;
+    transition: all .4s ease-in-out;
+    color: black
+
+}
+
+.the-final{
+
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
+.the-final-2{
+
+    position: absolute;
+    right: 0;
+    top: 40px;
+
+}
+
+.the-final-3{
+
+    position: absolute;
+    right: 0;
+    top: 80px;
+
+}
+
+.the-final-4{
+
+    position: absolute;
+    right: 0;
+    top: 115px;
+
+}
+
+.the-final-5{
+
+    position: absolute;
+    right: 0;
+    top: 155px;
+
+}
+
+.the-final-6{
+
+    position: absolute;
+    right: 0;
+    top: 192px;
+
+}
+
+
+.the-final-7{
+
+    position: absolute;
+    right: 0;
+    top: 229px;
+
+}
+
+
+.L-Urbana{
+
+    width: 350px;
+    height: 350px;
+    
+}  
+
+.title-Music{   
+
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.6rem; color: white;
+
+}
+
+.paragraph{
+
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.4rem; color: white;
+
+}
+
+.input-Music{
+    
+    position: relative;
+    margin-top: 25px;
+    text-align: center;
+
+}
+
+.input-Music input[type="range"]{
+
+
+    -webkit-appearance: none;
+    height: 5px;
+    appearance: none;
+    border-radius: 10px;
+}
+
+.input-Music input[type="range"]:hover{
+
+    cursor: pointer;
+    -webkit-appearance: none;
+    height: 5px;
+    appearance: none;
+    border-radius: 10px;
+
+}
+
+.progressBar-Music{
+
+    position: absolute;
+    height: 5px;
+    width: 50%;
+    left: 0;
+    bottom: 4px;
+
+}
+
+.input-Music input[type="range"]::-webkit-slider-thumb{
+
+    appearance: none;
+    display: block;
+    border-radius: 130px;
+    width: 19px;
+    height: 19px;
+    
+}
+
+.duration-Music{
+
+    width: 100%;
+
+}
+
+.buttons-Music{
+
+    display: flex;
+    
+    filter: invert(100%);
+    justify-content: center;
+
+}
+
+.back-Music, .backWards-Music, .play-Music, .forWards-Music, .next-Music{
+
+    margin: 13px;
+    transition: all .4s ease-in-out;
+
+    cursor: pointer;
+} 
+
+.back-Music:hover, .backWards-Music:hover, .play-Music:hover, .forWards-Music:hover, .next-Music:hover{
+
+    transform: scale(1.1);
+    filter: invert(55%);
+
+
+}
+
+.stopwatch-Music{
+
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.paragraph-stop{
+
+
+    margin: 15px;
+    color: white;
+    font-size: 1.1em;
+
+}
+
+.audio{
+
+    height: 30px !important;
+    
+    margin-top: 50px;
+    
+}
+
+
+.range{
+
+    height: 40px;
+    margin-left: 15px;
+  
+}
+
+.audio input[type="range"]:hover{
+
+    cursor: pointer;
+    z-index: 100;
+}
+
+
+.audio input[type="range"]{
+    
+    appearance: none;
+    display: block;
+    background-color: rgb(255, 255, 255);
+    padding: 0px;
+    outline: none;
+    -webkit-appearance: none;
+    height: 6px;
+    transform: scale(1.2);
+    appearance: none;
+    border-radius: 10px;
+    transition: background-color 0.2s ease;
+    z-index: 100;
+    height: 5px;
+    
+
+}
+
+.audio input[type="range"]::-webkit-slider-thumb{
+
+    position: relative;
+    appearance: none;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    z-index: 100;
+    transition: transform 0.2s ease;
+}
+
+.audio input[type="range"]:hover::-webkit-slider-thumb {
+    transform: scale(1.2); 
+}
+.audio input[type="range"]:active::-webkit-slider-thumb {
+    transform: scale(1.2); 
+}
+
+.flex-Audio{
+
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.audio-2, #muted{
+    
+    filter: invert(100%);
+    height: 35px !important;
+    position: relative;
+
+    transition: all .5s ease;
+
+}
+
+.audio-2:hover{
+
+    cursor: pointer;
+    transform: scale(1.1);
+    filter: invert(55%);
+
+}
+
+.ex{
+    
+    display: none;
+
+}
+
+.father-Audio{
+    
+    position: relative;
+    left: 9%; top: 13px;
+    border-radius: 180px;  
+    display: block;
+    
+}
+
+#progressAudio{
+    
+    cursor: pointer;
+    position: absolute;
+    height: 7px;
+    left: -13px;
+    bottom: -1px;
+
+    z-index: 99;
+    border-radius: 10px;
+
+}
+
+
+#loop{
+
+    float: right;
+    filter: invert(55%);
+}
+
+#loop:hover{
+    cursor: pointer;
+    filter: invert(100%);
+    transform: scale(1.1);
+    transition: all .5s ease-in-out;
+
+}
+
+
+
+@media screen and (max-width: 405px){
+
+    .design-Music{
+
+        width: 90%;
+
+    }
+
+    .image-Music{
+
+        margin-top: 60px;
+        width: 190px;
+        height: 190px;
+
+    }
+
+    .title-Music{
+
+        font-size: calc(100% + 1.3vmin);
+
+    }
+
+    .paragraph{
+        margin-top: 20px;
+        font-size: calc(100% + 1vmin);
+
+    }
+    .buttons-Music img{
+
+        height: 25px;
+
+    }
+
+    .design-Music{
+
+        height: 750px;
+
+    }
+        
+    #loop{
+        position: relative;
+
+        margin-bottom: 35px;
+        left: 50%;
+        transform: translateX(-50%);
+        float: none;
+        
+    }
+
+    .order-list{
+
+        width: 80%;
+
+    }
+
+    .order-Control{
+
+        font-size: calc(80% + 0.1vmin);
+
+
+    }
+
+    .order-Velocity, .playlist-Order{
+
+        font-size: calc(80% + 0.1vmin);
+        width: 80%;
+
+    
+    }
+
+    .playlist-Order{
+
+        font-size: calc(60% + 0.1vmin)!important;
+
+        height: 350px;
+
+
+    }
+
+    .Playlist-Show{
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+    }
+
+    .the-final, .the-final-2, .the-final-3, .the-final-4, .the-final-5, .the-final-6, .the-final-7{
+
+        display: none;
+
+    }
+}
+
+@media screen and (max-height: 667px){
+
+    main .image-body{
+
+        height: 150%;
+        overflow-y: hidden;
+    
+    }
+    
+
+    .background-Music{
+        margin-top: 20vh;
+
+    }
+
+    .design-Music {
+        min-height: auto; /* Remove o min-height se a tela for pequena, ou ajuste para se adequar */
+    }
+
+}   

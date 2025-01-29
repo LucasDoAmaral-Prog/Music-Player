@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link href="./style.css" rel="stylesheet">
+
+    <style id="style"></style>
+
+</head>
+
+<body>
+    
+    <main>
+
+        <div class="image-Body">
+
+            <img id="image-main" class="image-body" src="./images/Legiao_Urbana.jpg">
+        
+            <div id="order" class="order-list">
+
+                <p class="paragraph-options"></p>
+                <img style="filter:invert(100%);"src="./images/close.png" class="close-Div" id="Close">
+
+                <ol id="order-control"class="order-Control">    
+
+                    <li id="velocity" class="velocity">Velocidade da reprodução</li>
+                    <li id="playlist-2" class="playlist">Playlist</li>
+
+                </ol>
+
+            </div>
+
+            <div id="speed" class="choose-Speed">
+                            
+                <ol class="order-Velocity">
+                    <p class="paragraph-velocity">Velocidade da reprodução</p>
+                    <img id="arrow-back" class="arrow-back" src="images/back_arrow.png">
+                    <hr>
+                    
+                <div id="choose" class="velocityChoose">
+
+                    <li id="0.25">0.25x</li>
+                    <li id="0.5">0.5x</li>
+                    <li id="0.75">0.75x</li>
+                    <li id="1">Normal</li>
+                    <li id="1.25">1.25x</li>
+                    <li id="1.5">1.5x</li>
+                    <li id="1.75">1.75x</li>
+                    <li id="2">2x</li>
+
+                </div>
+
+                </ol>
+                
+            </div>
+
+            <div id="playlist">
+
+                <ol class="playlist-Order">
+
+                    <div id="playlistO"class="showPlaylist">
+
+                        <p class="paragraph-velocity">Playlist</p>
+                        <img id="back-Playlist" class="back-Playlist" src="images/back_arrow.png">
+                        <hr>
+                        
+                        <div class="Playlist-Show">
+                            <li id="./musics/SaveAprayer.mp3">Save A Prayer - Duran Duran</li><p class="the-final">05:33</p>
+                            <li id="./musics/Tempo_Perdido.mp3">Tempo Perdido - Legião Urbana</li><p class="the-final-2">05:00</p>
+                            <li id="./musics/SundayBloody.mp3">Sunday Bloody Sunday - U2</li><p class="the-final-3">04:39</p>
+                            <li id="./musics/ownerLonely.mp3">Owner of a Lonely Heart - Yes</li><p class="the-final-4">04:28</p>
+                            <li id="./musics/HoldtheLine.mp3">Hold The Line - Toto</li><p class="the-final-5">03:59</p>
+                            <li id="./musics/AcendaOFarol.mp3">Acenda o farol - Tim Maia</li><p class="the-final-6">03:12</p>
+                            <li id="./musics/EduardoEmonica.mp3">Eduardo e Mônica - Tempo Perdido</li><p class="the-final-7">04:31</p>
+                        </div>
+
+                    </div>
+                    
+
+                </ol>
+                    
+            </div>
+
+            <div id="design" class="background-Music">
+
+                <div id="design-M"class="design-Music">  
+
+                    <div id="control" class="control-Div">
+                        <div class="options">
+                            
+
+                            <img class="options" id="options" src="./images/options.png" title="Opções">
+                            
+                        </div>
+
+                        <div class="center-Image">
+                            <div class="image-Music">
+
+                                <img id="music-Image"class="L-Urbana"   src="./images/SaveAprayer.jpg">
+
+                            </div>
+                        </div>
+
+                        <div class="name-Music">
+
+                            <h2 id="title" class="title-Music">Legião Urbana</h2>
+                            <p id="singer" class="paragraph">Tempo Perdido</p>
+
+                        </div>
+
+                        <div class="input-Music">
+
+                            <input id="range" class="duration-Music" type="range" value='0' min="0" max="" step="any">
+                            <div id="progressBar" class="progressBar-Music"></div>
+
+                        </div>
+                        
+
+                        <div class="stopwatch-Music">
+
+                            <p class="paragraph-stop">00:00</p>
+                            <h9 id="finalMusic" class="paragraph-stop"></h9>
+
+                        </div>
+
+                        <div class="buttons-Music">
+
+                            <img id="back-Music" class="back-Music" src="./images/back.png" height="32px" title="Voltar música">
+                            <img id="backWards-Music" class="backWards-Music" src="./images/backward.png" title="Voltar segundos da música">
+                            <img id="play-Music" class="play-Music" src="./images/play.png" title="Começar a música">
+                            <img id="forWards-Music" class="forWards-Music" src="./images/forward.png" height="32px" title="Avançar segundos da música">
+                            <img id="next-Music" class="next-Music" src="./images/next.png" height="32px" title="Próxima música">
+
+                            <audio id="Musics">
+                                <source src="./musics/Tempo_Perdido.mp3">
+                            </audio>
+
+                        </div>
+
+                        <div class="audio" id="audio-Div">
+                            <div class="repetion">
+
+                                <img id="loop"src="./images/botao-de-repeticao.png" title="Repetição de música">
+                
+                            </div>
+                            <div class="flex-Audio">
+
+                                
+                                <img   class="audio-2" id="audio" src="./images/aumentar-o-volume.png" title="Volume">
+                                <img   class="ex audio-2" id="muted" src='./images/mute.png' height="30px" title="Áudio mutado">
+                                <div class="range">
+                                    
+                                    <div class="father-Audio">
+
+                                        <input id="Audio-range" type="range" min='0' value='50' max='100' step="any">
+                                        <div id="progressAudio"></div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                            
+                        </div>
+
+   
+
+                    </div>
+
+                </div>
+
+            </div>
+        
+        </div>
+
+    </main>
+
+    <script type="module" src="script.js"></script>
+    <script type="module" src="musicObject.js"></script>
+
+
+</body>
+
+</html>
